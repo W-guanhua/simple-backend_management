@@ -1,0 +1,14 @@
+{
+  "prop1": {
+    "type": "string",
+    "title": "label1",
+    "description": "label1",
+    "length": 6
+  },
+  "prop2": {
+    "type": "string",
+    "title": "label2",
+    "description": "label2",
+    "length": 6
+  }
+}

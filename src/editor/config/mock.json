@@ -1,0 +1,66 @@
+{
+  "project": "",
+  "projectName": "",
+  "tabList": [
+    {
+      "tab": "2",
+      "tabName": "2",
+      "jsonName": "2",
+      "type": "table",
+      "model": "AwardConfig对象",
+      "uuid": "c0f38dcf-09ec-d6bb-dcb5-48b135476b30",
+      "apiMap": { "get": "", "update": "", "add": "", "delete": "" },
+      "cols": [
+        {
+          "label": "奖励ID",
+          "prop": "awardId",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "奖励额度",
+          "prop": "awardNum",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "奖励类型: JF:积分/DTQ:定投卷/CYJ:财运金/HB:消费红包",
+          "prop": "awardType",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "渠道类型: MY:蚂蚁/TT:天天",
+          "prop": "channel",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "创建时间",
+          "prop": "createTime",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "奖励用途: FL:福利卡/ZX:加自选/LY:留言",
+          "prop": "grantType",
+          "type": "string",
+          "show": true
+        },
+        { "label": "主键", "prop": "id", "type": "string", "show": true },
+        {
+          "label": "更新时间",
+          "prop": "updateTime",
+          "type": "string",
+          "show": true
+        },
+        {
+          "label": "更新的版本",
+          "prop": "version",
+          "type": "string",
+          "show": true
+        }
+      ]
+    }
+  ]
+}

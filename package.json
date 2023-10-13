@@ -1,0 +1,93 @@
+{
+  "name": "vue-cli-test",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open --hot",
+    "build:dev": "cross-env NODE_ENV=development vue-cli-service build",
+    "build": "vue-cli-service build",
+    "deploy": "yarn build && yarn upload",
+    "upload": "node ./scripts/deploy.js",
+    "add-project": "node ./scripts/add-project/index.js",
+    "add-apiList": "node ./scripts/add-apiList/index.js",
+    "create-project": "node ./scripts/create-project/index.js",
+    "create-config": "node ./scripts/create-config/index.js",
+    "test": "node ./scripts/add-project/index.js",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "monaco-editor": "0.27.0",
+    "monaco-editor-webpack-plugin": "4.2.0",
+    "axios-miniprogram-adapter": "^0.3.0",
+    "better-scroll": "^1.15.2",
+    "chalk": "^4.0.0",
+    "copy-to-clipboard": "^3.3.1",
+    "core-js": "^2.6.5",
+    "element-ui": "^2.8.2",
+    "fs-extra": "^11.1.0",
+    "generate-schema": "^2.6.0",
+    "handlebars": "^4.7.6",
+    "moment": "^2.24.0",
+    "ora": "^4.0.4",
+    "qrcodejs2": "^0.0.2",
+    "regularjs": "^0.6.2",
+    "schema-util": "^3.4.6",
+    "scp2": "^0.5.0",
+    "sortablejs": "^1.15.0",
+    "uuid": "^9.0.0",
+    "vue": "^2.5.17",
+    "vue-json-editor": "^1.4.0",
+    "vue-json-viewer": "^2.2.11",
+    "vue-router": "^3.0.7",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.2.0",
+    "@vue/cli-plugin-eslint": "^3.2.0",
+    "@vue/cli-service": "^3.7.0",
+    "autoprefixer": "^6.7.2",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "file-loader": "^3.0.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
+    "vue-cli-plugin-axios": "0.0.4",
+    "vue-cli-plugin-element": "^1.0.0",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "vue/no-use-v-if-with-v-for": "off",
+      "no-unused-vars": "off",
+      "no-mixed-spaces-and-tabs": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "globals": {
+      "GLOBAL_CONFIG": true
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

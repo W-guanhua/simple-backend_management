@@ -1,0 +1,31 @@
+{
+  "tab": {
+    "type": "string",
+    "title": "tab文件名",
+    "description": "tab文件名",
+    "rules": "notEmpty"
+  },
+  "tabName": {
+    "type": "string",
+    "title": "tab名称",
+    "description": "tab名称",
+    "rules": "notEmpty"
+  },
+  "jsonName": {
+    "type": "string",
+    "title": "弹窗文件名",
+    "description": "弹窗文件名",
+    "rules": "notEmpty"
+  },
+  "type": {
+    "type": "relativeEnum",
+    "title": "页面类型",
+    "description": "页面类型",
+    "rules": "notEmpty",
+    "items": [
+      { "label": "table", "value": "table", "controls": ["model"] },
+      { "label": "banner", "value": "banner" },
+      { "label": "activity", "value": "activity" }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+    "fundName": {
+        "type": "string",
+        "title": "string",
+        "description": "字符串类型",
+        "rules": "notEmpty"
+    },
+    "labels": {
+        "type": "labels",
+        "title": "labels/stringArray",
+        "description": "labels标签类型,字符串数组",
+        "value": []
+    },
+    "rateDimension": {
+        "type": "options",
+        "title": "options/enum",
+        "description": "单选下拉框",
+        "items": [
+            {
+                "label": "净值",
+                "value": "netValue"
+            },
+            {
+                "label": "近一年",
+                "value": "j1n"
+            },
+            {
+                "label": "成立来收益率",
+                "value": "cll"
+            }
+        ]
+    },
+    "btnText": {
+        "type": "number",
+        "title": "number",
+        "description": "数字类型"
+    },
+    "detailUrl": {
+        "type": "color",
+        "title": "color",
+        "description": "颜色类型"
+    },
+    "awardType": {
+        "type": "relativeEnum",
+        "title": "奖品类型",
+        "description": "奖品类型",
+        "items": [
+            {
+                "label": "财运金红包",
+                "value": "a",
+                "controls": ["packetId"]
+            },
+            {
+                "label": "优酷会员",
+                "value": "b"
+            }
+        ]
+    },
+    "packetId": {
+        "type": "number",
+        "title": "红包ID",
+        "description": "红包ID",
+        "rules": "notEmpty",
+        "control": true
+    }
+}

@@ -1,0 +1,2160 @@
+{
+    "definitionList": [
+        {
+            "type": "object",
+            "properties": {
+                "alipayUserId": {
+                    "type": "string"
+                },
+                "headImgUrl": {
+                    "type": "string"
+                },
+                "nickName": {
+                    "type": "string"
+                },
+                "province": {
+                    "type": "string"
+                },
+                "sex": {
+                    "type": "string"
+                },
+                "subscribe": {
+                    "type": "boolean"
+                },
+                "userId": {
+                    "type": "string"
+                }
+            },
+            "title": "AlipayUserInfoDTO"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "awardId": {
+                    "type": "string",
+                    "description": "奖励ID"
+                },
+                "awardNum": {
+                    "type": "number",
+                    "description": "奖励额度"
+                },
+                "awardType": {
+                    "type": "string",
+                    "description": "奖励类型: 积分/定投卷/财运金/消费红包"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                }
+            },
+            "title": "AwardConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "awardId": {
+                    "type": "string",
+                    "description": "奖励ID"
+                },
+                "awardNum": {
+                    "type": "number",
+                    "description": "奖励额度"
+                },
+                "awardType": {
+                    "type": "string",
+                    "description": "奖励类型: JF:积分/DTQ:定投卷/CYJ:财运金/HB:消费红包"
+                },
+                "channel": {
+                    "type": "string",
+                    "description": "渠道类型: MY:蚂蚁/TT:天天"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "grantType": {
+                    "type": "string",
+                    "description": "奖励用途: FL:福利卡/ZX:加自选/LY:留言"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                },
+                "version": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "更新的版本"
+                }
+            },
+            "title": "AwardConfig对象",
+            "description": "奖励配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerUrl": {
+                    "type": "string",
+                    "description": "头图链接"
+                }
+            },
+            "title": "BannerConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerUrl": {
+                    "type": "string",
+                    "description": "头图链接"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "BannerConfig对象",
+            "description": "头图配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "cardUrl": {
+                    "type": "string",
+                    "description": "社区活动卡图片链接"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "mySkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "ttSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                }
+            },
+            "title": "CardActivityConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "cardUrl": {
+                    "type": "string",
+                    "description": "社区活动卡图片链接"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "mySkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "ttSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新链接"
+                }
+            },
+            "title": "CardActivityConfig对象",
+            "description": "活动卡配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "cardAwardStatus": {
+                    "type": "string",
+                    "description": "顶部福利卡是否可领取状态 1可领取/2已领取且未过3天/3已领取且过3天"
+                },
+                "flAwardConfig": {
+                    "description": "福利卡配置信息",
+                    "originalRef": "AwardConfig对象",
+                    "$ref": "#/definitions/AwardConfig对象"
+                },
+                "userAward": {
+                    "description": "奖励 未领取则为null",
+                    "originalRef": "UserAward对象",
+                    "$ref": "#/definitions/UserAward对象"
+                }
+            },
+            "title": "CardAwardVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "checkStatus": {
+                    "type": "string",
+                    "description": "审批状态 1审批通过/2不通过"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "主键ID"
+                }
+            },
+            "title": "CheckLyVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "columnTitile": {
+                    "type": "string",
+                    "description": "栏目标题"
+                },
+                "columnType": {
+                    "type": "string",
+                    "description": "栏目类型"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "myPushStatus": {
+                    "type": "string",
+                    "description": "蚂蚁推送开关 1推送/0不推送"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "ttPushStatus": {
+                    "type": "string",
+                    "description": "天天推送开关 1推送/0不推送"
+                }
+            },
+            "title": "ColumnConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "columnTitile": {
+                    "type": "string",
+                    "description": "栏目标题"
+                },
+                "columnType": {
+                    "type": "string",
+                    "description": "栏目类型"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "myPushStatus": {
+                    "type": "string",
+                    "description": "蚂蚁推送开关 1推送/0不推送"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "ttPushStatus": {
+                    "type": "string",
+                    "description": "天天推送开关 1推送/0不推送"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "ColumnConfig对象",
+            "description": "豆腐块配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "pageNo": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "分页序号"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "分页大小"
+                },
+                "reqType": {
+                    "type": "string",
+                    "description": "请求渠道 MY:蚂蚁/TT:天天"
+                }
+            },
+            "title": "CommonPageDTO"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "当前数据的主键"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "配置类型 hotTopic: 热点主题配置 product: 产品配置 article: 经理说"
+                }
+            },
+            "title": "DataDeleteDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "日期（交易日）"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "指数名称"
+                },
+                "indexNo": {
+                    "type": "string",
+                    "description": "指数代码"
+                },
+                "labelGz": {
+                    "type": "string",
+                    "description": "估值标签"
+                },
+                "labelYj": {
+                    "type": "string",
+                    "description": "业绩标签"
+                },
+                "labelZj": {
+                    "type": "string",
+                    "description": "资金标签"
+                },
+                "netIncome": {
+                    "type": "string",
+                    "description": "近一周净流入分位"
+                },
+                "pctChange": {
+                    "type": "string",
+                    "description": "近一月涨跌幅"
+                },
+                "pePercent": {
+                    "type": "string",
+                    "description": "估值分位数"
+                }
+            },
+            "title": "DataDetailProduct对象",
+            "description": "产品数据"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "sourceId": {
+                    "type": "string",
+                    "description": "当前需要移动数据的主键"
+                },
+                "targetId": {
+                    "type": "string",
+                    "description": "交换的那个数据的主键"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "配置类型 hotTopic: 热点主题配置 product: 产品配置 article: 经理说"
+                }
+            },
+            "title": "DataPositionDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "fundCode": {
+                    "type": "string",
+                    "description": "基金代码"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户id"
+                }
+            },
+            "title": "FavorFundDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "headLine": {
+                    "type": "string",
+                    "description": "话题标题"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "mySkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "ttSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                }
+            },
+            "title": "HotTopicConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "headLine": {
+                    "type": "string",
+                    "description": "话题标题"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "mySkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "sort": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "排序字段"
+                },
+                "ttSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "HotTopicConfig对象",
+            "description": "热点主题配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "渠道类型: MY:蚂蚁/TT:天天"
+                },
+                "checkStatus": {
+                    "type": "string",
+                    "description": "审批状态 0待审批/1审批通过/2不通过"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "留言内容"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "提交时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "审批时间"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户ID"
+                }
+            },
+            "title": "LyCheck对象",
+            "description": "留言审核"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerConfig": {
+                    "description": "头图配置",
+                    "originalRef": "BannerConfig对象",
+                    "$ref": "#/definitions/BannerConfig对象"
+                },
+                "cardActivityConfig": {
+                    "description": "活动卡配置",
+                    "originalRef": "CardActivityConfig对象",
+                    "$ref": "#/definitions/CardActivityConfig对象"
+                },
+                "cardAward": {
+                    "description": "顶部福利卡",
+                    "originalRef": "CardAwardVO",
+                    "$ref": "#/definitions/CardAwardVO"
+                },
+                "columnConfigList": {
+                    "type": "array",
+                    "description": "豆腐块配置",
+                    "items": {
+                        "originalRef": "ColumnConfig对象",
+                        "$ref": "#/definitions/ColumnConfig对象"
+                    }
+                },
+                "hotTopicConfig": {
+                    "type": "array",
+                    "description": "热点主题配置",
+                    "items": {
+                        "originalRef": "HotTopicConfig对象",
+                        "$ref": "#/definitions/HotTopicConfig对象"
+                    }
+                },
+                "managerArticleConfigList": {
+                    "type": "array",
+                    "description": "基金经理说配置",
+                    "items": {
+                        "originalRef": "ManagerArticleConfig对象",
+                        "$ref": "#/definitions/ManagerArticleConfig对象"
+                    }
+                },
+                "managerConfig": {
+                    "description": "经理卡配置",
+                    "originalRef": "ManagerConfig对象",
+                    "$ref": "#/definitions/ManagerConfig对象"
+                },
+                "productConfigList": {
+                    "type": "array",
+                    "description": "产品配置",
+                    "items": {
+                        "originalRef": "ProductVO",
+                        "$ref": "#/definitions/ProductVO"
+                    }
+                },
+                "subStatus": {
+                    "type": "string",
+                    "description": "订阅福利状态 1订阅/0未订阅"
+                },
+                "tjPop": {
+                    "description": "待推送弹窗-投教内容",
+                    "originalRef": "TJPopVO",
+                    "$ref": "#/definitions/TJPopVO"
+                },
+                "userAwardList": {
+                    "type": "array",
+                    "description": "用户未领取且需弹出的奖励列表",
+                    "items": {
+                        "originalRef": "UserAward对象",
+                        "$ref": "#/definitions/UserAward对象"
+                    }
+                }
+            },
+            "title": "MYIndexVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "headLine": {
+                    "type": "string",
+                    "description": "标题"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "myPushStatus": {
+                    "type": "string",
+                    "description": "蚂蚁推送开关 1推送/0不推送"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "ttPushStatus": {
+                    "type": "string",
+                    "description": "天天推送开关 1推送/0不推送"
+                }
+            },
+            "title": "ManagerArticleConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "headLine": {
+                    "type": "string",
+                    "description": "标题"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "jumpType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "跳转类型"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "蚂蚁跳转链接"
+                },
+                "myPushStatus": {
+                    "type": "string",
+                    "description": "蚂蚁推送开关 1推送/0不推送"
+                },
+                "sort": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "排序字段"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "天天跳转链接"
+                },
+                "ttPushStatus": {
+                    "type": "string",
+                    "description": "天天推送开关 1推送/0不推送"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "ManagerArticleConfig对象",
+            "description": "经理说配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "indexJudgeType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "产品天天跳转类型"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "代表产品名称"
+                },
+                "managerName": {
+                    "type": "string",
+                    "description": "经理名称"
+                },
+                "managerUrl": {
+                    "type": "string",
+                    "description": "经理图片url"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "产品蚂蚁跳转链接"
+                },
+                "mySubSkip": {
+                    "type": "string",
+                    "description": "关注蚂蚁跳转链接"
+                },
+                "mySubStatus": {
+                    "type": "string",
+                    "description": "蚂蚁是否可以关注状态 1可关注/0不可关注 默认1"
+                },
+                "subJudgeType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "关注天天跳转类型"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "产品天天跳转链接"
+                },
+                "ttSubSkip": {
+                    "type": "string",
+                    "description": "关注天天跳转链接"
+                },
+                "ttSubStatus": {
+                    "type": "string",
+                    "description": "天天是否可以关注状态 1可关注/0不关注 默认1"
+                }
+            },
+            "title": "ManagerConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "indexJudgeType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "产品天天跳转类型"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "代表产品名称"
+                },
+                "managerName": {
+                    "type": "string",
+                    "description": "经理名称"
+                },
+                "managerUrl": {
+                    "type": "string",
+                    "description": "经理图片url"
+                },
+                "myIndexSkip": {
+                    "type": "string",
+                    "description": "产品蚂蚁跳转链接"
+                },
+                "mySubSkip": {
+                    "type": "string",
+                    "description": "关注蚂蚁跳转链接"
+                },
+                "mySubStatus": {
+                    "type": "string",
+                    "description": "蚂蚁是否可以关注状态 1可关注/0不可关注 默认1"
+                },
+                "subJudgeType": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "关注天天跳转类型"
+                },
+                "ttIndexSkip": {
+                    "type": "string",
+                    "description": "产品天天跳转链接"
+                },
+                "ttSubSkip": {
+                    "type": "string",
+                    "description": "关注天天跳转链接"
+                },
+                "ttSubStatus": {
+                    "type": "string",
+                    "description": "天天是否可以关注状态 1可关注/0不关注 默认1"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "ManagerConfig对象",
+            "description": "基金经理配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "example": 123456,
+                    "description": "密码"
+                },
+                "username": {
+                    "type": "string",
+                    "example": 123456,
+                    "description": "登录账号"
+                }
+            },
+            "title": "MidUserDTO",
+            "description": "中台登录实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerConfig": {
+                    "description": "头图配置",
+                    "originalRef": "BannerConfig对象",
+                    "$ref": "#/definitions/BannerConfig对象"
+                },
+                "cardActivityConfig": {
+                    "description": "活动卡配置",
+                    "originalRef": "CardActivityConfig对象",
+                    "$ref": "#/definitions/CardActivityConfig对象"
+                },
+                "columnConfigList": {
+                    "type": "array",
+                    "description": "豆腐块配置",
+                    "items": {
+                        "originalRef": "ColumnConfig对象",
+                        "$ref": "#/definitions/ColumnConfig对象"
+                    }
+                },
+                "hotTopicConfig": {
+                    "type": "array",
+                    "description": "热点主题配置",
+                    "items": {
+                        "originalRef": "HotTopicConfig对象",
+                        "$ref": "#/definitions/HotTopicConfig对象"
+                    }
+                },
+                "managerArticleConfigList": {
+                    "type": "array",
+                    "description": "基金经理说配置",
+                    "items": {
+                        "originalRef": "ManagerArticleConfig对象",
+                        "$ref": "#/definitions/ManagerArticleConfig对象"
+                    }
+                },
+                "managerConfig": {
+                    "description": "经理卡配置",
+                    "originalRef": "ManagerConfig对象",
+                    "$ref": "#/definitions/ManagerConfig对象"
+                },
+                "myAwardConfigList": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "AwardConfig对象",
+                        "$ref": "#/definitions/AwardConfig对象"
+                    }
+                },
+                "productConfigList": {
+                    "type": "array",
+                    "description": "产品配置",
+                    "items": {
+                        "originalRef": "ProductConfig对象",
+                        "$ref": "#/definitions/ProductConfig对象"
+                    }
+                },
+                "ttawardConfigList": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "AwardConfig对象",
+                        "$ref": "#/definitions/AwardConfig对象"
+                    }
+                }
+            },
+            "title": "MidVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "endRow": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "firstPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hasNextPage": {
+                    "type": "boolean"
+                },
+                "hasPreviousPage": {
+                    "type": "boolean"
+                },
+                "isFirstPage": {
+                    "type": "boolean"
+                },
+                "isLastPage": {
+                    "type": "boolean"
+                },
+                "lastPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "LyCheck对象",
+                        "$ref": "#/definitions/LyCheck对象"
+                    }
+                },
+                "navigateFirstPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigateLastPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigatePages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigatepageNums": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "nextPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pageNum": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "prePage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "size": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "startRow": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "PageInfo«LyCheck对象»"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "endRow": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "firstPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "hasNextPage": {
+                    "type": "boolean"
+                },
+                "hasPreviousPage": {
+                    "type": "boolean"
+                },
+                "isFirstPage": {
+                    "type": "boolean"
+                },
+                "isLastPage": {
+                    "type": "boolean"
+                },
+                "lastPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "ZxCheck对象",
+                        "$ref": "#/definitions/ZxCheck对象"
+                    }
+                },
+                "navigateFirstPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigateLastPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigatePages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "navigatepageNums": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "nextPage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pageNum": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pageSize": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "pages": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "prePage": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "size": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "startRow": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "total": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "title": "PageInfo«ZxCheck对象»"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerUrl": {
+                    "type": "string",
+                    "description": "详情图url"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述文案"
+                },
+                "fundCode": {
+                    "type": "string",
+                    "description": "产品代码"
+                },
+                "fundName": {
+                    "type": "string",
+                    "description": "产品名称"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "indexCode": {
+                    "type": "string",
+                    "description": "指数代码"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "指数名称"
+                },
+                "recommStatus": {
+                    "type": "string",
+                    "description": "推荐状态 1推荐/0不推荐  默认1"
+                },
+                "theme": {
+                    "type": "string",
+                    "description": "主题"
+                }
+            },
+            "title": "ProductConfigDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerUrl": {
+                    "type": "string",
+                    "description": "详情图url"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述文案"
+                },
+                "fundCode": {
+                    "type": "string",
+                    "description": "产品代码"
+                },
+                "fundName": {
+                    "type": "string",
+                    "description": "产品名称"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "indexCode": {
+                    "type": "string",
+                    "description": "指数代码"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "指数名称"
+                },
+                "recommStatus": {
+                    "type": "string",
+                    "description": "推荐状态 1推荐/0不推荐  默认0"
+                },
+                "sort": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "排序字段"
+                },
+                "theme": {
+                    "type": "string",
+                    "description": "主题"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "ProductConfig对象",
+            "description": "产品配置"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerUrl": {
+                    "type": "string",
+                    "description": "详情图url"
+                },
+                "dataDetail": {
+                    "type": "array",
+                    "description": "指数数据列表",
+                    "items": {
+                        "originalRef": "DataDetailProduct对象",
+                        "$ref": "#/definitions/DataDetailProduct对象"
+                    }
+                },
+                "description": {
+                    "type": "string",
+                    "description": "描述文案"
+                },
+                "favorFundStatus": {
+                    "type": "string",
+                    "description": "用户是否完成此产品加自选 0未完成/1已完成"
+                },
+                "indexCode": {
+                    "type": "string",
+                    "description": "产品代码"
+                },
+                "indexName": {
+                    "type": "string",
+                    "description": "产品名称"
+                },
+                "recommStatus": {
+                    "type": "string",
+                    "description": "推荐状态 1推荐/0不推荐  默认1"
+                },
+                "sort": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "排序字段"
+                },
+                "theme": {
+                    "type": "string",
+                    "description": "主题"
+                }
+            },
+            "title": "ProductVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "awardID": {
+                    "type": "string",
+                    "description": "未领取的奖励实体ID,类型是加自选和留言需传"
+                },
+                "grantType": {
+                    "type": "string",
+                    "description": "奖励用途: FL:福利卡/ZX:加自选/LY:留言"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户id"
+                }
+            },
+            "title": "ReceiveAwardDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "object"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "AlipayUserInfoDTO",
+                    "$ref": "#/definitions/AlipayUserInfoDTO"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«AlipayUserInfoDTO»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "AwardConfig对象",
+                    "$ref": "#/definitions/AwardConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«AwardConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "BannerConfig对象",
+                    "$ref": "#/definitions/BannerConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«BannerConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "CardActivityConfig对象",
+                    "$ref": "#/definitions/CardActivityConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«CardActivityConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "ColumnConfig对象",
+                    "$ref": "#/definitions/ColumnConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«ColumnConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "HotTopicConfig对象",
+                    "$ref": "#/definitions/HotTopicConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«HotTopicConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "UserAward对象",
+                        "$ref": "#/definitions/UserAward对象"
+                    }
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«List«UserAward对象»»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "array",
+                    "items": {
+                        "originalRef": "User对象",
+                        "$ref": "#/definitions/User对象"
+                    }
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«List«User对象»»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "MYIndexVO",
+                    "$ref": "#/definitions/MYIndexVO"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«MYIndexVO»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "ManagerArticleConfig对象",
+                    "$ref": "#/definitions/ManagerArticleConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«ManagerArticleConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "ManagerConfig对象",
+                    "$ref": "#/definitions/ManagerConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«ManagerConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "MidVO",
+                    "$ref": "#/definitions/MidVO"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«MidVO»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "PageInfo«LyCheck对象»",
+                    "$ref": "#/definitions/PageInfo«LyCheck对象»"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«PageInfo«LyCheck对象»»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "PageInfo«ZxCheck对象»",
+                    "$ref": "#/definitions/PageInfo«ZxCheck对象»"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«PageInfo«ZxCheck对象»»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "ProductConfig对象",
+                    "$ref": "#/definitions/ProductConfig对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«ProductConfig对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "TTIndexVO",
+                    "$ref": "#/definitions/TTIndexVO"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«TTIndexVO»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "UserInfoDTO",
+                    "$ref": "#/definitions/UserInfoDTO"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«UserInfoDTO»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "UserInfo对象",
+                    "$ref": "#/definitions/UserInfo对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«UserInfo对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "originalRef": "User对象",
+                    "$ref": "#/definitions/User对象"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«User对象»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "boolean"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«boolean»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "body": {
+                    "type": "string"
+                },
+                "errCode": {
+                    "type": "string",
+                    "description": "状态码, 正确时返回 e0000, 其他非 e0000则是错误的"
+                },
+                "errMessage": {
+                    "type": "string",
+                    "description": "信息, 若有错误则是具体的错误信息"
+                }
+            },
+            "title": "ResponseVO«string»",
+            "description": "通用返回类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "columnConfigPopList": {
+                    "type": "array",
+                    "description": "待推送-豆腐块内容列表",
+                    "items": {
+                        "originalRef": "ColumnConfig对象",
+                        "$ref": "#/definitions/ColumnConfig对象"
+                    }
+                },
+                "managerArticlePopList": {
+                    "type": "array",
+                    "description": "待推送-经理说内容列表",
+                    "items": {
+                        "originalRef": "ManagerArticleConfig对象",
+                        "$ref": "#/definitions/ManagerArticleConfig对象"
+                    }
+                }
+            },
+            "title": "TJPopVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "bannerConfig": {
+                    "description": "头图配置",
+                    "originalRef": "BannerConfig对象",
+                    "$ref": "#/definitions/BannerConfig对象"
+                },
+                "cardActivityConfig": {
+                    "description": "活动卡配置",
+                    "originalRef": "CardActivityConfig对象",
+                    "$ref": "#/definitions/CardActivityConfig对象"
+                },
+                "cardAward": {
+                    "description": "顶部福利卡",
+                    "originalRef": "CardAwardVO",
+                    "$ref": "#/definitions/CardAwardVO"
+                },
+                "columnConfigList": {
+                    "type": "array",
+                    "description": "豆腐块配置",
+                    "items": {
+                        "originalRef": "ColumnConfig对象",
+                        "$ref": "#/definitions/ColumnConfig对象"
+                    }
+                },
+                "hotTopicConfig": {
+                    "type": "array",
+                    "description": "热点主题配置",
+                    "items": {
+                        "originalRef": "HotTopicConfig对象",
+                        "$ref": "#/definitions/HotTopicConfig对象"
+                    }
+                },
+                "managerArticleConfigList": {
+                    "type": "array",
+                    "description": "基金经理说配置",
+                    "items": {
+                        "originalRef": "ManagerArticleConfig对象",
+                        "$ref": "#/definitions/ManagerArticleConfig对象"
+                    }
+                },
+                "managerConfig": {
+                    "description": "经理卡配置",
+                    "originalRef": "ManagerConfig对象",
+                    "$ref": "#/definitions/ManagerConfig对象"
+                },
+                "productConfigList": {
+                    "type": "array",
+                    "description": "产品配置",
+                    "items": {
+                        "originalRef": "ProductVO",
+                        "$ref": "#/definitions/ProductVO"
+                    }
+                },
+                "subStatus": {
+                    "type": "string",
+                    "description": "订阅福利状态 1订阅/0未订阅"
+                },
+                "tjPop": {
+                    "description": "待推送弹窗-投教内容",
+                    "originalRef": "TJPopVO",
+                    "$ref": "#/definitions/TJPopVO"
+                },
+                "userAwardList": {
+                    "type": "array",
+                    "description": "用户未领取且需弹出的奖励列表",
+                    "items": {
+                        "originalRef": "UserAward对象",
+                        "$ref": "#/definitions/UserAward对象"
+                    }
+                }
+            },
+            "title": "TTIndexVO",
+            "description": "响应实体类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "awardId": {
+                    "type": "string",
+                    "description": "奖励ID"
+                },
+                "awardNum": {
+                    "type": "number",
+                    "description": "奖励额度"
+                },
+                "awardRes": {
+                    "type": "string",
+                    "description": "第三方接口的错误返回日志"
+                },
+                "awardType": {
+                    "type": "string",
+                    "description": "奖励类型: JF:积分/DTQ:定投卷/CYJ:财运金/HB:消费红包"
+                },
+                "channel": {
+                    "type": "string",
+                    "description": "渠道类型: MY:蚂蚁/TT:天天"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "grantStatus": {
+                    "type": "string",
+                    "description": "发送状态: 1发放成功/0发放失败/2未领取"
+                },
+                "grantType": {
+                    "type": "string",
+                    "description": "奖励用途: FL:福利卡/ZX:加自选/LY:留言"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "pushStaus": {
+                    "type": "string",
+                    "description": "弹窗推送状态  0未推送/1已推送/2不需推送"
+                },
+                "remark": {
+                    "type": "string",
+                    "description": "备注 用于存放 加自选的产品代码"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户ID"
+                },
+                "version": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "更新的版本"
+                }
+            },
+            "title": "UserAward对象"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "string",
+                    "description": "授权码"
+                }
+            },
+            "title": "UserCodeDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": 123456,
+                    "description": "主键"
+                }
+            },
+            "title": "UserDTO",
+            "description": "获取用户信息"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "userId": {
+                    "type": "string",
+                    "description": "用户id"
+                }
+            },
+            "title": "UserIdDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "required": [
+                "userId"
+            ],
+            "properties": {
+                "userId": {
+                    "type": "string",
+                    "example": 123456,
+                    "description": "支付宝用户唯一标识符"
+                },
+                "userName": {
+                    "type": "string",
+                    "example": "我是一个用户姓名",
+                    "description": "用户姓名"
+                }
+            },
+            "title": "UserInfoDTO",
+            "description": "用户信息交互类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "渠道类型: MY:蚂蚁/TT:天天"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "创建时间"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "用户ID: 蚂蚁的userid/天天的openid"
+                },
+                "subStatus": {
+                    "type": "string",
+                    "description": "订阅福利状态 1订阅/0未订阅"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "更新时间"
+                }
+            },
+            "title": "UserInfo对象"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "createdTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "updatedTime": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "userId": {
+                    "type": "string"
+                },
+                "userName": {
+                    "type": "string"
+                }
+            },
+            "title": "User对象"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "pushScene": {
+                    "type": "string",
+                    "description": "推送场景 Col:豆腐块栏目/Manager:基金经理说"
+                },
+                "pushTaskId": {
+                    "type": "string",
+                    "description": "推送内容的主键ID"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户id"
+                }
+            },
+            "title": "ViewPopDTO",
+            "description": "参数类"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "channel": {
+                    "type": "string",
+                    "description": "渠道类型: MY:蚂蚁/TT:天天"
+                },
+                "checkStatus": {
+                    "type": "string",
+                    "description": "审批状态 0待审批/1审批通过/2不通过"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "截图url"
+                },
+                "createTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "提交时间"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "主键"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "审批时间"
+                },
+                "userId": {
+                    "type": "string",
+                    "description": "用户ID"
+                }
+            },
+            "title": "ZxCheck对象",
+            "description": "蚂蚁渠道自选截图审核"
+        }
+    ],
+    "apiList": [
+        {
+            "url": "/mid/awardConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "奖励配置-编辑接口",
+            "operationId": "awardConfigUsingPOST",
+            "apiName": "awardConfig"
+        },
+        {
+            "url": "/mid/bannerConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "头图配置编辑接口",
+            "operationId": "bannerConfigUsingPOST",
+            "apiName": "bannerConfig"
+        },
+        {
+            "url": "/mid/cardActivityConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "社区活动卡配置编辑接口",
+            "operationId": "cardActivityConfigUsingPOST",
+            "apiName": "cardActivityConfig"
+        },
+        {
+            "url": "/mid/checkLy",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "留言审核接口",
+            "operationId": "checkLyUsingPOST",
+            "apiName": "checkLy"
+        },
+        {
+            "url": "/mid/checkZX",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "自选截图审核接口",
+            "operationId": "checkZXUsingPOST",
+            "apiName": "checkZX"
+        },
+        {
+            "url": "/mid/columnConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "豆腐块配置-编辑接口",
+            "operationId": "columnConfigUsingPOST",
+            "apiName": "columnConfig"
+        },
+        {
+            "url": "/mid/configEffect",
+            "methods": "get",
+            "tag": "中台相关接口",
+            "summary": "产品配置-保存配置生效接口",
+            "operationId": "configEffectUsingGET",
+            "apiName": "configEffect"
+        },
+        {
+            "url": "/mid/deleteById",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "统一数据删除接口",
+            "operationId": "deleteByIdUsingPOST",
+            "apiName": "deleteById"
+        },
+        {
+            "url": "/mid/getLycheckList",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "获取留言审核数据列表接口",
+            "operationId": "getLycheckListUsingPOST",
+            "apiName": "getLycheckList"
+        },
+        {
+            "url": "/mid/getZXcheckList",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "获取自选截图审核数据列表接口",
+            "operationId": "getZXcheckListUsingPOST",
+            "apiName": "getZXcheckList"
+        },
+        {
+            "url": "/mid/hotTopicConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "热点主题配置 新增/编辑接口",
+            "operationId": "hotTopicConfigUsingPOST",
+            "apiName": "hotTopicConfig"
+        },
+        {
+            "url": "/mid/managerArticleConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "经理说配置-新增/编辑接口",
+            "operationId": "managerArticleConfigUsingPOST",
+            "apiName": "managerArticleConfig"
+        },
+        {
+            "url": "/mid/managerConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "经理卡配置编辑接口",
+            "operationId": "managerConfigUsingPOST",
+            "apiName": "managerConfig"
+        },
+        {
+            "url": "/mid/midIndex",
+            "methods": "get",
+            "tag": "中台相关接口",
+            "summary": "中台首页接口",
+            "operationId": "midIndexUsingGET",
+            "apiName": "midIndex"
+        },
+        {
+            "url": "/mid/productConfig",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "产品配置-新增/编辑接口",
+            "operationId": "productConfigUsingPOST",
+            "apiName": "productConfig"
+        },
+        {
+            "url": "/mid/updateDataPosition",
+            "methods": "post",
+            "tag": "中台相关接口",
+            "summary": "统一数据位置更新接口",
+            "operationId": "updateDataPositionUsingPOST",
+            "apiName": "updateDataPosition"
+        }
+    ]
+}

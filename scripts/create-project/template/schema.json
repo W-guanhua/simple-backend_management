@@ -1,0 +1,10 @@
+{
+  {{#each schemaList}}
+  "{{this.prop}}": {
+      "type": "{{this.type}}",
+      "title": "{{this.description}}",
+      "description": "请输入{{this.description}}",
+      "rules": "notEmpty"
+  }{{#unless @last}}, {{/unless}}
+  {{/each}}
+}
